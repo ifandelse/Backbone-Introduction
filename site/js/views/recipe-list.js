@@ -1,3 +1,13 @@
+/*
+	Fairly straightforward view that manages the display of recipes in the Collection
+	that acts as the model to this view.  You'll notice that even though this view has
+	no other model instances (only the collection), I still pass it into the template
+	rendering function as the member of an object.  This is because in most circumstances
+	that I've seen - as an app grows, it becomes necessary for collection views to have
+	model data in addition to the collection itself, and having the template expect an
+	object allows an easy point in which to simply add the new data that should be displayed.
+	Note that calling 'fetch' automatically on init - while convenient - can be dangerous.
+ */
 define( [
 	'backbone',
 	'underscore',

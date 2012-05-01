@@ -1,3 +1,6 @@
+/*
+	I chose to use mockjax so that this app will not require a back-end service layer and data store to run.
+ */
 define( [
 	'jquery',
 	'underscore',
@@ -38,6 +41,22 @@ define( [
 					"Ignore the sugar content of the preserves, and convince yourself that the gluten free bread and natural fat from the butter is all that matters",
 					"Consider having a slice of bacon with the toast. Bacon is paleo. Bacon is good. Bacon is BACON.",
 					"Repeat as necessary"
+				]
+			},
+			2 : {
+				id : 2,
+				title : "Awesome Sauce",
+				description : "It's epic beyond words...",
+				items : [
+					"Awesome",
+					"Sauce",
+					"Lots and lots of time. LOTS."
+				],
+				steps : [
+					"1 Cup of Awesome",
+					"1 Cup of Sauce",
+					"Stir for about 10 years - until blended smooth.",
+					"Consume quickly - only lasts about 10 minutes"
 				]
 			}
 		},
@@ -81,7 +100,6 @@ define( [
 		type : "POST",
 		status : 200,
 		response : function ( settings ) {
-			console.log( "POST" );
 			var id = idSeed++,
 				data = JSON.parse( settings.data );
 			data.id = id;
@@ -96,7 +114,6 @@ define( [
 		type : "PUT",
 		status : 200,
 		response : function ( settings ) {
-			console.log( "PUT" );
 			var data = JSON.parse( settings.data );
 			recipes[data.id] = data;
 			this.responseText = JSON.stringify( data );

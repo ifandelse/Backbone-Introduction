@@ -1,3 +1,6 @@
+/*
+	Top level view that acts as the container for anything else that backbone will be displaying
+ */
 define( [
 	'backbone',
 	'underscore',

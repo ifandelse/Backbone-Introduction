@@ -11,13 +11,13 @@
 			<div class="control-group">
 				<label class="control-label" for="title">Title</label>
 				<div class="controls">
-					<input type="text" class="input-xlarge" id="title" value="<%= title %>">
+					<input type="text" class="input-xlarge text-updateable" id="title" value="<%= title %>">
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="title">Description</label>
 				<div class="controls">
-					<input type="text" class="input-xlarge" id="description" value="<%= description %>">
+					<input type="text" class="input-xlarge text-updateable" id="description" value="<%= description %>">
 				</div>
 			</div>
 			<div class="control-group">
@@ -50,19 +50,20 @@
 				</div>
 			</div>
 		</fieldset>
+		<div id="errors"></div>
 	</form>
 <% } else { %>
 	<div>
-		<h4>Viewing Recipe:</h4>
-		<p>Title: <strong><%= title %></strong></p>
-		<p>Description: <em><%= description %></em></p>
-		<div>Items Required:</div>
+		<h2>Viewing Recipe:</h2>
+		<p><em>Title:</em> <strong><%= title %></strong></p>
+		<p><em>Description:</em> <%= description %></p>
+		<div><em>Items Required:</em></div>
 		<ul>
 			<% _.each(items, function(item) { %>
 			<li><%= item %></li>
 			<% }) %>
 		</ul>
-		<div>Steps:</div>
+		<div><em>Steps:</em></div>
 		<ol>
 			<% _.each(steps, function(step) { %>
 			<li><%= step %></li>
